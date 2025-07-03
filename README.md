@@ -9,4 +9,9 @@
 - Работы с TinyDB
 - Создания CLI-интерфейсов (Typer)
 
-> **Future Plans**: Планируется добавить веб-интерфейс через Flask/FastAPI
+> **implemented**: 
+- Функционал взаимодействия через CLI
+
+> **Future Plans**:
+- Модульное тестирование Pytest
+- Веб-интерфейс через Flask/FastAPI
