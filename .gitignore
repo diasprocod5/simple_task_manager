@@ -1,3 +1,4 @@
 .idea
 venv
+.venv
 scr/tasks/__pycache__/
