@@ -8,8 +8,8 @@ from api import Task
 
 def format_str():
     formatstr = "{: >4} {: >20} {: >6} {: <40} {}"
-    print(formatstr.format("ID", "title", "done", "description", "tags"))
-    print(formatstr.format("--", "-----", "----", "-----------", "----"))
+    print(formatstr.format("ID", "title", "done", " description", " tags"))
+    print(formatstr.format("--", "-----", "----", " -----------", " ----"))
     return formatstr
 
 app = typer.Typer()
@@ -28,7 +28,7 @@ def get(task_id: int = typer.Argument(..., help="ID задачи")):
     with _db_session():
         task = api.get(task_id)
     form_str = format_str()
-    typer.echo(form_str.format(task.task_id, task.title or "", "✔️" if task.done else "❌",task.descr or "",
+    typer.echo(form_str.format(task.task_id, task.title or "", "✔  " if task.done else "❌  ",task.descr or "",
                                ",".join(task.tags) if task.tags else ""))
 
 
@@ -72,7 +72,7 @@ def get_list(tags: str = typer.Argument(None, help='Поиск по тегам '
         typer.echo(form_str.format(
             t.task_id,
             t.title or "",
-            "✔️" if t.done else "❌",
+            "✔️  " if t.done else "❌  ",
             t.descr or "",
             ",".join(t.tags) if t.tags else ""
         ))

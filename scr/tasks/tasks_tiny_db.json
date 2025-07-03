@@ -1,1 +1,1 @@
-{"task": {}}
+{"task": {"1": {"title": "new task", "descr": "test test test", "tags": ["test", "task", "tost"], "done": false, "task_id": 1}, "2": {"title": "test", "descr": "test your application", "tags": ["tasks", "application"], "done": false, "task_id": 2}}}

@@ -1,9 +1,10 @@
 # tasks_tyny_db.py
 from tinydb import TinyDB, Query
+from tinydb.storages import MemoryStorage
 
 class TasksTinyDB:
-    def __init__(self):
-        self._db_instance = TinyDB('./tasks_tiny_db.json')
+    def __init__(self, use_memory: bool = False, storage_path: str = './tasks_tiny_db.json'):
+        self._db_instance = TinyDB(storage=MemoryStorage() if use_memory else storage_path)
         self._db = self._db_instance.table('task')
 
     def add(self, task):
